@@ -30,10 +30,7 @@ const getUserTodos = catchAsync(async (req, res, next) => {
 
 const addUserTodo = catchAsync(async (req, res, next) => {
   const { id } = req.currentUser;
-  const newTodo = await Todo.create(
-    { ...req.body, createdBy: id },
-    { validateBeforeSave: false }
-  );
+  const newTodo = await Todo.create({ ...req.body, createdBy: id });
 
   res.status(201).json({
     status: "success",
@@ -80,7 +77,7 @@ const updateUserTodo = catchAsync(async (req, res, next) => {
   }
   todo.updatedAt = Date.now();
 
-  todo.save({ validateBeforeSave: false });
+  todo.save();
 
   res.status(200).json({
     status: "success",
