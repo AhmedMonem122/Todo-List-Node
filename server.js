@@ -11,7 +11,7 @@ const DB = process.env.DATABASE_URL.replace(
   process.env.DATABASE_PASSWORD
 );
 
-DB.collection.dropIndexes();
+db.collection.dropIndexes();
 
 mongoose
   .connect(DB)
