@@ -20,4 +20,4 @@ app.listen(port, () => {
   console.log(`App Running on port ${port}...`);
 });
 
-db.todos.dropIndexes();
+test.todos.dropIndex(createdBy);
