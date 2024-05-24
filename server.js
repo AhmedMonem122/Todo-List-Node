@@ -11,8 +11,6 @@ const DB = process.env.DATABASE_URL.replace(
   process.env.DATABASE_PASSWORD
 );
 
-db.collection.dropIndexes();
-
 mongoose
   .connect(DB)
   .then(() => console.log("Database connected successfully!"));
@@ -21,3 +19,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App Running on port ${port}...`);
 });
+
+db.collection.dropIndexes();
