@@ -11,8 +11,6 @@ app.use(express.json());
 app.use("/api/v1/todos", todosRouter);
 app.use("/api/v1/users", userRouter);
 
-test.todos.dropIndex(createdBy);
-
 // global middleware for not found router
 app.all("*", (req, res, next) => {
   return res
